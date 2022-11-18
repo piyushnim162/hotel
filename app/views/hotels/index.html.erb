@@ -1,0 +1,29 @@
+ <h2><center>Hotels List</h2><br>
+<div class= 'row'>
+    <div class="col-md-5"></div>
+    <div class="col-md-5"></div>
+    <div class="col-md-2"><%= link_to 'Create Hotel', new_hotel_path  %></div>
+</div>
+
+<div class="container">
+  <table class="table table-striped">
+    <tr>
+      <th>name</th>
+      <th>address</th>
+      <th>contact_no</th>
+      <th>Edit</th>
+        <th>Show</th>
+      <th>Delete</th>
+    </tr>
+    <% @hotels.each do |hotel| %>
+    <tr>
+      <td><%= hotel.name if hotel.name.present? %></td>
+      <td><%= hotel.address if hotel.address.present? %></td>
+      <td><%= hotel.contact_no if hotel.contact_no.present?%></td>
+      <td><%= link_to 'Edit', edit_hotel_path(hotel),class:"btn btn-primary" %></td>
+      <td><%= link_to 'Show', hotel_path(hotel.id),class:"btn btn-primary" %></td>
+      <td><%= button_to 'Delete',hotel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+      <% end %>
+   </table>
+</div>

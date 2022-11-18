@@ -1,0 +1,26 @@
+<div class="nested-fields">
+   <%= f.hidden_field :_destroy %>
+
+    <div class = "field">
+      <%= f.label :room_no, "Room No", class:"form-label" %></br>
+      <%= f.text_field :room_no, class:"form-control" %><br { display:block; margin-top:10px; line-height:22px; }>
+    </div>
+
+    <div class = "field">
+      <%= f.label :room_size, "Room Size", class:"form-label"%></br>
+      <%= f.text_field :room_size, class:"form-control" %><br { display:block; margin-top:10px; line-height:22px; }>
+    </div>
+
+    <div class = "field">
+      <%= f.label :description, "Description", class:"form-label"%></br>
+      <%= f.text_field :description, class:"form-control" %><br { display:block; margin-top:10px; line-height:22px; }>
+    </div>
+
+    <div>
+      <%= f.label :image %><br>
+      <%= f.file_field :images ,multiple: true, accept: 'image/png, image/gif, image/jpeg, image/jpg'%>
+
+    </div>
+    <%= link_to "Remove", '#', class: "remove_fields" %>
+</div>
+
